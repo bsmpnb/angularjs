@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  ng-app="myAngularApplication">
+    <head>
+        <title>sample2</title>
+        <script src="libs/angular.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/book/booksController.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div ng-controller="booksController">{{ message }} </div>
+        <h4 ng-controller="booksController as booksCtrl">{{ booksCtrl.greeting }}</h4>
+        <input type="button" ng-click="fetchBooks()" value="Fetch Books"/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Book Name</td>
+                    <td>Author Name</td>
+                    <td>ISBN</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books">
+                    <td>{{book.ID}}</td>
+                    <td>{{book.BookName}}</td>
+                    <td>{{book.AuthorName}}</td>
+                    <td>{{book.ISBN}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
